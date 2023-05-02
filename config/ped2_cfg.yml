@@ -1,0 +1,76 @@
+#============dataset============
+num_frames: &num_frames 16
+# dataPath: 'E:/dataset/UCSD/UCSDped1/video/label/'
+
+#set as your own path
+#ped2 dataset
+train_dataPath: 'E:/dataset/UCSD/UCSDped2/label/train.csv'
+val_dataPath: 'E:/dataset/UCSD/UCSDped2/label/test.csv'
+tst_dataPath: 'E:/dataset/UCSD/UCSDped2/label/test.csv'
+
+#background for ped2 dataset
+bgPth:
+
+#removing the background 48*48
+#mean: [0.0369, 0.0369, 0.0369]
+#std: [0.1302, 0.1302, 0.1302]
+
+#no removing bg 48*48
+mean: [0.4502, 0.4502, 0.4502]
+std: [0.1809, 0.1809, 0.1809]
+#-bg
+#mean: [0.0284, 0.0284, 0.0284]
+#std: [0.1138, 0.1138, 0.1138]
+
+frames_per_second: 30
+# side_size: 200
+#if shortSide_size: 160, and crop_size: [3, 8, 160, 280], do the detection on whole image
+input_shape: [3, 8, 48, 48] # patch size h,w is x*4
+
+# device_number: 1
+batch_size: 5
+num_works: 0
+#ped2
+#shortSide_size: 240 # resized short size of video frame and keep the width/height radio
+shortSide_size: 240
+
+#ped2 dataset
+#raw_shape: [3, 16, 240, 360] # original size of video frame
+#avenue dataset
+raw_shape: [3, *num_frames, 240, 360] # original size of video frame
+train_dt_sampler: 'random'
+val_dt_sampler: 'uniform'
+stride: 16
+rec_layers: [0,3,4]
+wght_layers: [0,3,4]
+
+#=====================train=====================
+# training parameters
+lr: 0.0001
+weight_decay: 0.0001
+# optimizer: Adam
+aeWarmEpochs: 1
+
+# training scheduler
+lr_scheduler: 'step'
+lr_decay_steps: 80
+lr_decay_rate: 0.5
+lr_decay_min_lr: 0.00001
+updtR_epoches: 15
+
+# model parameters
+# input_shape: [3, 8, 32, 32]
+code_length: 64
+nu: 0.01
+objFlg: 'soft'
+
+# loss parameters
+oneLsAlpha: 1 #1-0.827, 2-0.839 #5-0.826
+aeLsAlpha: 1
+gdLsAlpha: 1 #1
+motLsAlpha: 25 #20 # 20-0.839, 50-0.81，10-0.830
+cntNum: 1 # clusters
+
+#score combination coefficients list
+cmbScoreWght: [-2, -1, -0.5, -0.1, 0, 0.1, 0.5, 1, 2, 5]
+
