@@ -4,12 +4,11 @@ reconstruction autoencoder with a variance attention
 strategy.
 
 # requirements
-If you want to run the program, please install the pytorch, pytorch-lightning, pytorchvideo first.
-In our implementation, the version of pytorch-lightning is 1.9.0,  pytorchvideo is 0.1.5, torch is 1.11.0
+To run the program, please install the following packages: pytorch, pytorch-lightning, and pytorchvideo. In our implementation, we used pytorch-lightning version 1.9.0, pytorchvideo 
+version 0.1.5, and torch version 1.11.0.
 
-# how to run it
-1. First, you should prepare the data with a a csv file. The video is stored with images in one folder, so you should
-provide the folder name in the csv file, and then provide the groundtruth for each frame following the folder path.
-2. Second, configure the yml file with the data csv file and you can change the 
-other parameters, such as batch size, block size, and so on.
-3. Third, special the "flg" in the tst.py file and then run it.  
+
+# how to run it`
+1. To start, prepare the data using a CSV file. Since the video is stored with images in a single folder, provide the folder name in the CSV file followed by the ground truth for each frame.
+2. Next, configure the YAML file using the data CSV file, and adjust other parameters such as batch size, learning rate, weight decay, and block size, etc.
+3. Finally, specify the "flg" in the [tst.py](http://tst.py/) file and run it.
