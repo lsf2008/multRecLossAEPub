@@ -1,3 +1,8 @@
+This is a PyTorch-lightning/GPU implementation of the paper 
+Video anomaly detection based on a multi-layer
+reconstruction autoencoder with a variance attention
+strategy.
+
 # requirements
 If you want to run the program, please install the pytorch, pytorch-lightning, pytorchvideo first.
 In our implementation, the version of pytorch-lightning is 1.9.0,  pytorchvideo is 0.1.5, torch is 1.11.0
@@ -7,4 +12,4 @@ In our implementation, the version of pytorch-lightning is 1.9.0,  pytorchvideo 
 provide the folder name in the csv file, and then provide the groundtruth for each frame following the folder path.
 2. Second, configure the yml file with the data csv file and you can change the 
 other parameters, such as batch size, block size, and so on.
-3. 
+3. Third, special the "flg" in the tst.py file and then run it.  
