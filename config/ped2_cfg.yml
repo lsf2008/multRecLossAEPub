@@ -5,7 +5,7 @@ num_frames: &num_frames 16
 #set as your own path
 #ped2 dataset
 train_dataPath: 'E:/dataset/UCSD/UCSDped2/label/train.csv'
-val_dataPath: 'E:/dataset/UCSD/UCSDped2/label/test.csv'
+val_dataPath: 'E:/dataset/UCSD/UCSDped2/label/val.csv'
 tst_dataPath: 'E:/dataset/UCSD/UCSDped2/label/test.csv'
 
 #background for ped2 dataset
